@@ -24,10 +24,14 @@ public class Counter {
         }
       }
     };
-    new Thread(r).start();
-    new Thread(r).start();
+    Thread t1 = new Thread(r);
+    t1.start();
+    Thread t2 = new Thread(r);
+    t2.start();
     System.out.println("counter started...");
-    Thread.sleep(5_000);
+//    Thread.sleep(5_000);
+    t1.join();
+    t2.join();
     System.out.println("\nCount is " + c.count);
   }
 }
