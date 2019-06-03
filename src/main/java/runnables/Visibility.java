@@ -1,7 +1,7 @@
 package runnables;
 
 public class Visibility {
-  static boolean stop = false;
+  static volatile boolean stop = false;
 
   public static void main(String[] args) throws Throwable {
     new Thread(() -> {
